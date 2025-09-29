@@ -5,6 +5,7 @@ node_modules
 .netlify
 .nitro
 dist
+.dist
 # Wrangler (Cloudflare workers) output
 .wrangler
 # Build directories (depending on the build tool you are using)
