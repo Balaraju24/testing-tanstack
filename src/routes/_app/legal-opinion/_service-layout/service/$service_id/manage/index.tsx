@@ -1,0 +1,8 @@
+import ManageComponent from "@/components/app/service/manage";
+import { createFileRoute } from "@tanstack/react-router";
+
+export const Route = createFileRoute(
+  "/_app/legal-opinion/_service-layout/service/$service_id/manage/"
+)({
+  component: ManageComponent,
+});
