@@ -71,7 +71,7 @@ const CreateLegalOpinion = () => {
   });
 
   const filteredOrganizations =
-    organisationData?.filter((org) => {
+    organisationData?.filter((org: any) => {
       const searchTerm = organizationSearch.toLowerCase();
       const orgName = org.organisation_name.toLowerCase();
       const locationName = org.location.name.toLowerCase();

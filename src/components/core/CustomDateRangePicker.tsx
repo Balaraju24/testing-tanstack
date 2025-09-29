@@ -61,12 +61,7 @@ export function CustomSelectDropdown(props: DropdownProps) {
   );
 }
 
-const CustomDateRangePicker = ({
-  date,
-  setDate,
-  mode = "day",
-  align,
-}: CustomDateRangePickerProps) => {
+const CustomDateRangePicker = ({ date, setDate, mode = "day", align }: any) => {
   const [selectedDate, setSelectedDate] = React.useState<DateRange | undefined>(
     date
   );

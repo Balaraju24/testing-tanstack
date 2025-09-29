@@ -11,7 +11,7 @@ import { CaseCardFooter } from "../app/litigation/CaseCardFooter";
 import { useUserDetails } from "@/utils/hooks/useUserPermissions";
 import { getStatusDisplay } from "@/utils/helpers/statusDisplayHelper";
 
-const CaseCard = ({ record, refetch }) => {
+const CaseCard = ({ record }: { record: any }) => {
   const { isUser } = useUserDetails();
   const case_id = record?.id;
   const icon = issueIcons[record?.service?.issue]?.({

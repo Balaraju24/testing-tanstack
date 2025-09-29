@@ -8,7 +8,7 @@ import ViewIconGrid from "@/components/icons/view-icon-grid";
 import FilesIconCard from "@/components/icons/files-icon-card";
 import ChatIconCard from "@/components/icons/chat-icon-card";
 
-export const CaseCardFooter = ({ record }) => {
+export const CaseCardFooter = ({ record }: { record: any }) => {
   const router = useRouter();
   const navigate = useNavigate();
   const serviceType = record?.service_type;

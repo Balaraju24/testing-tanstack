@@ -22,7 +22,7 @@ const DetailsCard = ({ details }: any) => {
   const selectedAdvocate =
     assignedAdvocates[selectedAdvocateIndex]?.advocate || null;
 
-  const createIcon = (iconKey) =>
+  const createIcon = (iconKey: any) =>
     issueIcons[iconKey]?.({ className: "h-5 w-5 text-black mx-1" }) ?? (
       <span role="img" aria-label="icon">
         📄

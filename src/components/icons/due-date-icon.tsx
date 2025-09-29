@@ -1,5 +1,5 @@
 import * as React from "react";
-const DueDateIcon = (props) => (
+const DueDateIcon = (props: any) => (
   <svg
     width={320}
     height={310}

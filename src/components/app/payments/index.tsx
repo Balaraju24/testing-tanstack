@@ -125,7 +125,7 @@ const PaymentsList = ({
 
   useEffect(() => {
     const handler = setTimeout(() => {
-      setPagination((prev) => ({
+      setPagination((prev: any) => ({
         ...prev,
         current_page: searchString ? prev.current_page : 1,
       }));

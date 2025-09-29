@@ -4,7 +4,7 @@ export const isLastStageCompleted = (record: any): boolean => {
   const stages = record?.case_stages?.[0]?.stages;
   if (!stages || stages.length === 0) return false;
 
-  const lastStage = stages.reduce((prev, current) =>
+  const lastStage = stages.reduce((prev: any, current: any) =>
     current.order > prev.order ? current : prev
   );
 

@@ -11,7 +11,7 @@ const YearDropdown = ({
   startYear = 2000,
   endYear = new Date().getFullYear(),
   onChange,
-}) => {
+}: any) => {
   const years: number[] = [];
   for (let year = endYear; year >= startYear; year--) {
     years.push(year);

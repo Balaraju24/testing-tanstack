@@ -51,12 +51,12 @@ const Stats = ({
 
   const stats = allServices.map((service) => {
     const serviceData = serviceStats?.find(
-      (s) => s.service_type.toLowerCase() === service.title.toLowerCase()
+      (s: any) => s.service_type.toLowerCase() === service.title.toLowerCase()
     );
 
     if (serviceData) {
       const statusMap: Partial<ServiceStatus> = {};
-      serviceData.statuses.forEach((s) => {
+      serviceData.statuses.forEach((s: any) => {
         if (s.status === "TO_START") statusMap["to_start"] = s.count;
         if (s.status === "IN_PROGRESS") statusMap["progress"] = s.count;
         if (s.status === "COMPLETED") statusMap["completed"] = s.count;
@@ -65,7 +65,7 @@ const Stats = ({
       return {
         title: service.title,
         path: service.path,
-        cases: serviceData.statuses.reduce((a, b) => a + b.count, 0),
+        cases: serviceData.statuses.reduce((a: any, b: any) => a + b.count, 0),
         ...statusMap,
       };
     } else {
@@ -118,7 +118,9 @@ const Stats = ({
                   <p className="text-smd font-light text-gray-700">
                     {status.label}
                   </p>
-                  <p className="font-medium">{item[status.key] || 0}</p>
+                  <p className="font-medium">
+                    {item[status.key as keyof typeof item] || 0}
+                  </p>
                 </div>
                 <div>{getIcon(status.key)}</div>
               </div>

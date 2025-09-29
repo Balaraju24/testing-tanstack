@@ -10,7 +10,7 @@ import {
 import { Tooltip, TooltipTrigger } from "../ui/tooltip";
 import { NavMainProps } from "@/lib/interfaces/nav";
 
-export function NavMain({ items }: NavMainProps) {
+export function NavMain({ items }: any) {
   const location = useLocation();
   const { state } = useSidebar();
 
@@ -27,7 +27,7 @@ export function NavMain({ items }: NavMainProps) {
   return (
     <SidebarGroup className="bg-[#F0F4FA] h-full">
       <SidebarMenu className="space-y-1 2xl:space-y-2">
-        {items.map((item) => {
+        {items.map((item: any) => {
           const activeLinks = item.activePaths || [item.url];
           const activeClass = isActive(activeLinks)
             ? "bg-black text-white font-normal !rounded-none !py-0.5 xl:!py-2"

@@ -201,7 +201,7 @@ const ReportSubmissions = ({ stage, subStage }: DynamicComponentProps) => {
         {hasExistingDocs && (
           <DocumentList
             documents={allDocsData.filter(
-              (doc) => doc.category === "Legal Report Document"
+              (doc: any) => doc.category === "Legal Report Document"
             )}
             category="Legal Report Document"
             downloadingDocId={downloadingDocId}
@@ -313,7 +313,7 @@ const ReportSubmissions = ({ stage, subStage }: DynamicComponentProps) => {
         {serviceData?.is_received_original_doc && !showFinalUploadUI && (
           <DocumentList
             documents={allDocsData.filter(
-              (doc) => doc.category === "Final Report Document"
+              (doc: any) => doc.category === "Final Report Document"
             )}
             category="Final Report Document"
             downloadingDocId={downloadingDocId}

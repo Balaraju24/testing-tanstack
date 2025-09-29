@@ -39,10 +39,10 @@ export interface ServiceStatus {
   overdue: number;
 }
 
-const TotalOrganizationIcon = ({ className }) => (
+const TotalOrganizationIcon = ({ className }: { className: string }) => (
   <TotalFileCountIcon className={className} />
 );
-const TotalCasesIcon = ({ className }) => (
+const TotalCasesIcon = ({ className }: { className: string }) => (
   <TotalFileCasesCountIcon className={className} />
 );
 
@@ -188,22 +188,23 @@ const StatisticsSection = () => {
   ];
 
   const legalOpinionCount = isAdvocate()
-    ? advocateServiceCount?.find((s) => s.service_type === "Legal opinion")
+    ? advocateServiceCount?.find((s: any) => s.service_type === "Legal opinion")
         ?.cases_count
-    : servicesCount?.find((s) => s.service_type === "Legal opinion")
+    : servicesCount?.find((s: any) => s.service_type === "Legal opinion")
         ?.cases_count;
 
   const litigationCount = isAdvocate()
-    ? advocateServiceCount?.find((s) => s.service_type === "Litigation")
+    ? advocateServiceCount?.find((s: any) => s.service_type === "Litigation")
         ?.cases_count
-    : servicesCount?.find((s) => s.service_type === "Litigation")?.cases_count;
+    : servicesCount?.find((s: any) => s.service_type === "Litigation")
+        ?.cases_count;
 
   const eopCount = isAdvocate()
     ? advocateServiceCount?.find(
-        (s) => s.service_type === "Engineer property valuation"
+        (s: any) => s.service_type === "Engineer property valuation"
       )?.cases_count
     : servicesCount?.find(
-        (s) => s.service_type === "Engineer property valuation"
+        (s: any) => s.service_type === "Engineer property valuation"
       )?.cases_count;
 
   const getVisibleStats1 = () => {
@@ -222,8 +223,9 @@ const StatisticsSection = () => {
     {
       name: "Legal Opinion",
       cases: legalOpinionCount,
-      revenue: servicesCount?.find((s) => s.service_type === "Legal opinion")
-        ?.revenue,
+      revenue: servicesCount?.find(
+        (s: any) => s.service_type === "Legal opinion"
+      )?.revenue,
 
       color: "bg-green-100 text-green-600",
       icon: LegalCasesIcon,
@@ -234,7 +236,7 @@ const StatisticsSection = () => {
       cases: eopCount,
 
       revenue: servicesCount?.find(
-        (s) => s.service_type === "Engineer property valuation"
+        (s: any) => s.service_type === "Engineer property valuation"
       ),
       color: "bg-blue-100 text-blue-600",
       icon: EngineerValuationIcon,
@@ -243,7 +245,7 @@ const StatisticsSection = () => {
     {
       name: "Litigation",
       cases: litigationCount,
-      revenue: servicesCount?.find((s) => s.service_type === "Litigation")
+      revenue: servicesCount?.find((s: any) => s.service_type === "Litigation")
         ?.revenue,
       color: "bg-violet-100 text-violet-600",
       icon: Litigation,
@@ -268,12 +270,12 @@ const StatisticsSection = () => {
 
   const customerStats = allServices.map((service) => {
     const serviceData = orgCasesCount?.find(
-      (s) => s.service_type.toLowerCase() === service.title.toLowerCase()
+      (s: any) => s.service_type.toLowerCase() === service.title.toLowerCase()
     );
 
     if (serviceData) {
       const statusMap: Partial<ServiceStatus> = {};
-      serviceData.statuses.forEach((s) => {
+      serviceData.statuses.forEach((s: any) => {
         if (s.status === "TO_START") statusMap["to_start"] = s.count;
         if (s.status === "IN_PROGRESS") statusMap["progress"] = s.count;
         if (s.status === "COMPLETED") statusMap["completed"] = s.count;
@@ -282,7 +284,7 @@ const StatisticsSection = () => {
       return {
         title: service.title,
         path: service.path,
-        cases: serviceData.statuses.reduce((a, b) => a + b.count, 0),
+        cases: serviceData.statuses.reduce((a: any, b: any) => a + b.count, 0),
         ...statusMap,
       };
     } else {
@@ -457,7 +459,10 @@ const StatisticsSection = () => {
                       <p className="text-smd font-light text-gray-700">
                         {status.label}
                       </p>
-                      <p className="font-medium">{item[status.key] || 0}</p>
+                      <p className="font-medium">
+                        {" "}
+                        {item[status.key as keyof typeof item] || 0}
+                      </p>
                     </div>
                     <div>{getIcon(status.key)}</div>
                   </div>

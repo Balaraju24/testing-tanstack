@@ -43,7 +43,7 @@ const RevenueStatistics = () => {
     search_string: searchLocation,
   });
 
-  const location2 = locationData?.records?.map((location) => {
+  const location2 = locationData?.records?.map((location: any) => {
     return {
       id: location.id,
       label: location.name,
@@ -53,7 +53,7 @@ const RevenueStatistics = () => {
   const { data: organizationsData, isLoading: isLoadingOrganizations } =
     useOrganizationDropdown(searchOrganizationString);
 
-  const allOrganizations = organizationsData?.records?.map((org) => {
+  const allOrganizations = organizationsData?.records?.map((org: any) => {
     return {
       id: org.id,
       label: org.organisation_name,
@@ -84,7 +84,9 @@ const RevenueStatistics = () => {
           <ComboBox
             items={allOrganizations}
             placeholder="Select Organization"
-            value={allOrganizations?.find((o) => o.id === searchOrganization)}
+            value={allOrganizations?.find(
+              (o: any) => o.id === searchOrganization
+            )}
             onChange={(item) => setSearchOrganization(item?.id)}
             className="h-8 text-smd font-light border-gray-300"
             contentClassName="bg-white rounded"
@@ -97,7 +99,7 @@ const RevenueStatistics = () => {
           <ComboBox
             items={location2}
             placeholder="Select Location"
-            value={location2?.find((o) => o.id === selectedLocation)}
+            value={location2?.find((o: any) => o.id === selectedLocation)}
             onChange={(item) => setSelectedLocation(item?.id)}
             defaultIcon={MapPin}
             className="h-8 text-smd font-light border-gray-300"
