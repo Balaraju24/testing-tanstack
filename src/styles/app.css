@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+@import "tailwindcss";
+
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --ring: 215 20.2% 65.1%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --ring: 216 34% 17%;
+  }
+  
+}
+
+.rs-theme-light,
+:root {
+  --rs-primary-50: #f2f2f2 !important;
+  --rs-primary-100: #f2f2f2 !important;
+  --rs-primary-200: #f2f2f2 !important;
+  --rs-primary-300: #f2f2f2 !important;
+  --rs-primary-400: #000 !important;
+  --rs-primary-500: #000 !important;
+  --rs-primary-600: #000 !important;
+  --rs-primary-700: #000 !important;
+  --rs-primary-800: #000 !important;
+  --rs-primary-900: #000 !important;
+}
+body {
+  font-family: "DM sans", sans-serif;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari and Opera */
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+@layer base {
+  /* * {
+    @apply border-border;
+  } */
+  body {
+    @apply font-sans antialiased;
+  }
+}
+
+.date-range-picker .rs-picker-input-group {
+  background-color: #e3e3e3 !important;
+  max-width: 180px !important;
+  border: 1px solid #00000038 !important;
+}
+.date-range-picker .rs-picker-input-group:focus-within,
+.datePicker .rs-picker-input-group:focus-within {
+  outline: none !important;
+  border: 1px solid #00000038 !important;
+}
+.date-range-picker .rs-picker-input-group:hover,
+.datePicker .rs-picker-input-group:hover {
+  border: 1px solid #00000038 !important;
+}
+.date-range-picker .rs-picker-input-group input,
+.datePicker .rs-picker-input-group input {
+  background-color: #e3e3e3 !important;
+  font-size: 12px !important;
+  color: #000 !important;
+}
+
+.date-range-picker .rs-picker-input-group input::placeholder {
+  font-size: 12px !important;
+  color: #000 !important;
+}
+
+.rs-input-group-addon svg path {
+  fill: #000 !important;
+}
+.rs-picker-input-group {
+  border-radius: 0 !important;
+  font-size: clamp(12px, 0.74vw, 16px) !important;
+  font-family: "DM Sans", sans-serif !important;
+}
+.rs-picker-input-group input {
+  font-size: clamp(12px, 0.74vw, 16px) !important;
+}
+/* add advacate adn legal advisor */
+.datePicker .rs-picker-input-group {
+  background-color: #f1f5f9 !important;
+}
+.datePicker .rs-picker-input-group input {
+  background-color: #f1f5f9 !important;
+}
+
+/* dashboard calendar styles */
+.rs-calendar-compact .rs-calendar-header {
+  display: none;
+}
+.rs-picker-popup {
+  z-index: 999 !important;
+}
+
+/* graph styles */
+.highcharts-credits {
+  display: none !important;
+}
+
+.rs-calendar-header-error {
+  color: #000 !important;
+}
+
+.rs-calendar-header-error:hover {
+  background-color: #b7b6b6 !important;
+  color: #000 !important;
+}
+
+.rs-picker-daterange-header {
+  display: none;
+}
+
+.calendar .rs-calendar-table-cell-is-today .rs-calendar-table-cell-day {
+  background-color: transparent !important;
+  color: #000 !important;
+}
+
+.assign svg {
+  display: none;
+}
+
+.plus svg {
+  display: inline;
+}
+.menu-link a:focus {
+  color: white !important;
+}
+.menu-link a:hover:focus {
+  color: white !important;
+}
+input:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  color: inherit !important;
+}
+.rs-calendar-compact
+  .rs-calendar-table-cell-selected
+  .rs-calendar-table-cell-content {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+.rs-calendar-compact
+  .rs-calendar-table-cell-selected
+  .rs-calendar-table-cell-content
+  div
+  span {
+  background-color: white !important;
+}
+
+.rs-calendar-compact
+  .rs-calendar-table-cell-is-today
+  .rs-calendar-table-cell-content {
+  background-color: transparent !important;
+  color: #000 !important;
+  border: 1px solid #000 !important;
+}
+.rs-calendar-compact
+  .rs-calendar-table-cell-is-today.rs-calendar-table-cell-selected
+  .rs-calendar-table-cell-content {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+.rs-calendar-compact
+  .rs-calendar-table-cell-is-today.rs-calendar-table-cell-selected
+  .rs-calendar-table-cell-content
+  .rs-calendar-table-cell-day {
+  color: #fff !important;
+}
+/* Add this CSS to override Chrome autofill styles */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #f3f4f6 inset !important;
+  -webkit-text-fill-color: #111827 !important;
+  background-color: #f3f4f6 !important;
+}
+
+/* For your specific input styling */
+.bg-gray-100:-webkit-autofill,
+.bg-gray-100:-webkit-autofill:hover,
+.bg-gray-100:-webkit-autofill:focus,
+.bg-gray-100:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #f3f4f6 inset !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+@theme {
+  --text-smd: 13px;
+  --text-md: 15px;
+}
