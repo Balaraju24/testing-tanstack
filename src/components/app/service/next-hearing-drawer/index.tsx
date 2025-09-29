@@ -25,7 +25,7 @@ const NextHearingDrawer = ({
   fetchNextPage,
   caseNotes,
   isLoadingCaseNote,
-}) => {
+}: any) => {
   const observer = useRef<IntersectionObserver | null>(null);
   const [isNotesOpen, setIsNotesOpen] = useState(false);
   const [isAddNotesOpen, setIsAddNotesOpen] = useState(false);

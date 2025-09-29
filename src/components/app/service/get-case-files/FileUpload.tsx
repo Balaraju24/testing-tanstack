@@ -18,14 +18,14 @@ import { sliceFilename } from "@/utils/helpers/manage";
 import { FileUploadProps } from "@/lib/interfaces/files";
 import { FileUploadDialog } from "./FileUploadDialog";
 
-const FileUpload: React.FC<FileUploadProps> = ({
+const FileUpload = ({
   refetch,
   documentId,
   category,
   loading2,
   setLoading2,
   children,
-}) => {
+}: any) => {
   const { service_id } = useParams({ strict: false });
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
@@ -210,7 +210,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
       } else {
         throw response;
       }
-    } catch (error) { }
+    } catch (error) {}
   };
 
   const uploadDocsMutation = useMutation({

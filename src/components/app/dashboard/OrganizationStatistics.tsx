@@ -57,7 +57,7 @@ const OrganizationStatistics = () => {
     search_string: searchLocation,
     enabled: !!isAdmin(),
   });
-  const allLocations = locationData?.records?.map((location) => {
+  const allLocations = locationData?.records?.map((location: any) => {
     return {
       id: location.id,
       label: location.name,
@@ -69,7 +69,7 @@ const OrganizationStatistics = () => {
   const { data: organizationsData, isLoading: isLoadingOrganizations } =
     useOrganizationDropdown(searchOrganizationString, isManager() || isAdmin());
 
-  const allOrganizations = organizationsData?.records?.map((org) => {
+  const allOrganizations = organizationsData?.records?.map((org: any) => {
     return {
       id: org.id,
       label: org.organisation_name,
@@ -79,7 +79,7 @@ const OrganizationStatistics = () => {
   const { data: advocatesOrgData, isLoading: isLoadingAdvocates } =
     useAdvocateOrgDropdown(isAdvocate());
 
-  const allAdvocatesOrg = advocatesOrgData?.map((advocate) => {
+  const allAdvocatesOrg = advocatesOrgData?.map((advocate: any) => {
     return {
       id: advocate.id,
       label: advocate.organisation_name,
@@ -89,7 +89,7 @@ const OrganizationStatistics = () => {
   const { data: advocatesLocData, isLoading: isLoadingAdvocatesLoc } =
     useAdvocateLocationDropdown(isAdvocate());
 
-  const allAdvocatesLoc = advocatesLocData?.map((advLoc) => {
+  const allAdvocatesLoc = advocatesLocData?.map((advLoc: any) => {
     return {
       id: advLoc.id,
       label: advLoc.name,
@@ -224,7 +224,7 @@ const OrganizationStatistics = () => {
                   items={allAdvocatesOrg}
                   placeholder="Select Organization"
                   value={allAdvocatesOrg?.find(
-                    (o) => o.id === searchOrganization
+                    (o: any) => o.id === searchOrganization
                   )}
                   onChange={(item) => setSearchOrganization(item?.id)}
                   className="h-8 text-smd font-light border-gray-300"
@@ -237,7 +237,7 @@ const OrganizationStatistics = () => {
                   items={allOrganizations}
                   placeholder="Select Organization"
                   value={allOrganizations?.find(
-                    (o) => o.id === searchOrganization
+                    (o: any) => o.id === searchOrganization
                   )}
                   onChange={(item) => setSearchOrganization(item?.id)}
                   className="h-8 text-smd font-light border-gray-300"
@@ -252,7 +252,7 @@ const OrganizationStatistics = () => {
               <ComboBox
                 items={allAdvocatesLoc}
                 placeholder="Select Location"
-                value={allAdvocatesLoc?.find((l) => l.id === location)}
+                value={allAdvocatesLoc?.find((l: any) => l.id === location)}
                 onChange={(item) => setLocation(item?.id)}
                 defaultIcon={MapPin}
                 className="h-8 text-smd font-light border-gray-300"
@@ -266,7 +266,7 @@ const OrganizationStatistics = () => {
               <ComboBox
                 items={allLocations}
                 placeholder="Select Location"
-                value={allLocations?.find((l) => l.id === location)}
+                value={allLocations?.find((l: any) => l.id === location)}
                 onChange={(item) => setLocation(item?.id)}
                 defaultIcon={MapPin}
                 className="h-8 text-smd font-light border-gray-300"
@@ -302,7 +302,7 @@ const OrganizationStatistics = () => {
                 items={allAdvocatesOrg}
                 placeholder="Select Organization"
                 value={allAdvocatesOrg?.find(
-                  (o) => o.id === searchOrganization
+                  (o: any) => o.id === searchOrganization
                 )}
                 onChange={(item) => setSearchOrganization(item?.id)}
                 className="h-8 text-smd font-light border-gray-300"
@@ -315,7 +315,7 @@ const OrganizationStatistics = () => {
                 items={allOrganizations}
                 placeholder="Select Organization"
                 value={allOrganizations?.find(
-                  (o) => o.id === searchOrganization
+                  (o: any) => o.id === searchOrganization
                 )}
                 onChange={(item) => setSearchOrganization(item?.id)}
                 className="h-8 text-smd font-light border-gray-300"
@@ -330,7 +330,7 @@ const OrganizationStatistics = () => {
             <ComboBox
               items={allAdvocatesLoc}
               placeholder="Select Location"
-              value={allAdvocatesLoc?.find((l) => l.id === location)}
+              value={allAdvocatesLoc?.find((l: any) => l.id === location)}
               onChange={(item) => setLocation(item?.id)}
               defaultIcon={MapPin}
               className="h-8 text-smd font-light border-gray-300"
@@ -344,7 +344,7 @@ const OrganizationStatistics = () => {
             <ComboBox
               items={allLocations}
               placeholder="Select Location"
-              value={allLocations?.find((l) => l.id === location)}
+              value={allLocations?.find((l: any) => l.id === location)}
               onChange={(item) => setLocation(item?.id)}
               defaultIcon={MapPin}
               className="h-8 text-smd font-light border-gray-300"

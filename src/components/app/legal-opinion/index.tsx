@@ -319,11 +319,7 @@ const LegalOpinion = ({
                 ) : lawyersData?.records && lawyersData?.records.length > 0 ? (
                   <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4  p-0">
                     {lawyersData?.records?.map((record: any) => (
-                      <CaseCard
-                        key={record.id}
-                        record={record}
-                        refetch={refetch}
-                      />
+                      <CaseCard key={record.id} record={record} />
                     ))}
                   </div>
                 ) : (

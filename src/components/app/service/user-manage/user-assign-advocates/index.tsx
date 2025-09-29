@@ -36,9 +36,9 @@ const UserAssignAdvocate = ({ stage, subStage }: AssignAdvocateProps) => {
                   <div className="grid xl:grid-cols-2 3xl:grid-cols-3 gap-4 max-w-4xl">
                     {serviceData?.advocate_cases
                       ?.filter(
-                        (advocateCase) => advocateCase.is_advocate_assigned
+                        (advocateCase: any) => advocateCase.is_advocate_assigned
                       )
-                      .map((advocateCase) => (
+                      .map((advocateCase: any) => (
                         <div
                           className="bg-white border border-gray-200 rounded-md shadow-md "
                           key={advocateCase.id}

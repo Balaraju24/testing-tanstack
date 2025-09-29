@@ -81,7 +81,7 @@ const ReviewsList = ({
   useEffect(() => {
     const handler = setTimeout(() => {
       if (searchString !== debounceSearchString) {
-        setPagination((prev) => ({
+        setPagination((prev: any) => ({
           ...prev,
           current_page: 1,
         }));

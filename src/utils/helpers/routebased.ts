@@ -2,22 +2,25 @@
 import { useNavigate, useRouter } from "@tanstack/react-router";
 import { useUserDetails } from "@/utils/hooks/useUserPermissions";
 
-export const useCaseNavigation = (record) => {
+export const useCaseNavigation = (record: any) => {
   const router = useRouter();
   const navigate = useNavigate();
   const { isUser } = useUserDetails();
-  
+
   const case_id = record?.id;
   const serviceType = record?.service_type;
   const isLitigation = serviceType === "Litigation";
 
   const setCaseOrigin = () => {
-    const origin = serviceType !== "Litigation" ? "legal-opinion" : "litigation";
+    const origin =
+      serviceType !== "Litigation" ? "legal-opinion" : "litigation";
     sessionStorage.setItem("case-origin", origin);
   };
 
   const getServiceBasePath = () => {
-    return isLitigation ? `/litigations/service/${case_id}` : `/legal-opinion/service/${case_id}`;
+    return isLitigation
+      ? `/litigations/service/${case_id}`
+      : `/legal-opinion/service/${case_id}`;
   };
 
   const navigateToCaseHistory = () => {
@@ -65,7 +68,7 @@ export const useCaseNavigation = (record) => {
   const navigateToManage = () => {
     setCaseOrigin();
     const userPath = isUser() ? "/user/manage" : "/manage";
-    
+
     if (isLitigation) {
       navigate({
         to: `/litigations/service/${record?.id}${userPath}`,

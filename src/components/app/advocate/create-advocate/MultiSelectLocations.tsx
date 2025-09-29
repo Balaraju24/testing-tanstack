@@ -39,7 +39,7 @@ const MultiSelectLocations = ({
   const [tempClearedForManagers, setTempClearedForManagers] = useState(false);
   const shouldShowClearForManagers =
     shouldUseSingleSelection && value.length > 0 && !tempClearedForManagers;
-  const filteredLocations = locations?.filter((location) =>
+  const filteredLocations = locations?.filter((location: any) =>
     location?.name?.toLowerCase()?.includes(locationSearch.toLowerCase())
   );
 
@@ -87,7 +87,7 @@ const MultiSelectLocations = ({
     if (tempClearedForManagers || value.length === 0)
       return "Select Work Location";
     if (shouldUseSingleSelection && value.length > 0) {
-      const selectedLocation = locations.find((l) => l.id === value[0]);
+      const selectedLocation = locations.find((l: any) => l.id === value[0]);
       return selectedLocation?.name || "Unknown Location";
     }
     return "Select Work Location";
@@ -110,7 +110,7 @@ const MultiSelectLocations = ({
                   {value.length === 0
                     ? "Select Work Location"
                     : value.slice(0, 4).map((id) => {
-                        const item = locations.find((l) => l.id === id);
+                        const item = locations.find((l: any) => l.id === id);
                         const { background, color } = getColorByFirstLetter(
                           item?.name || ""
                         );
@@ -153,7 +153,7 @@ const MultiSelectLocations = ({
                         style={{ maxHeight: "350px", overflowY: "auto" }}
                       >
                         {value.slice(4).map((id) => {
-                          const item = locations.find((l) => l.id === id);
+                          const item = locations.find((l: any) => l.id === id);
                           const { background, color } = getColorByFirstLetter(
                             item?.name || ""
                           );
@@ -204,7 +204,7 @@ const MultiSelectLocations = ({
             />
             <CommandList className="max-h-[220px]">
               <CommandGroup>
-                {filteredLocations.map((item) => (
+                {filteredLocations.map((item: any) => (
                   <CommandItem
                     key={item.id}
                     value={item.name}

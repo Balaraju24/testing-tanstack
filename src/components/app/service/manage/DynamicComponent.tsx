@@ -9,7 +9,7 @@ export const DynamicComponent = ({
   subStage,
   mappedCaseStagesData,
 }: DynamicComponentProps) => {
-  const Component: LazyComponentType = useMemo(() => {
+  const Component: any = useMemo(() => {
     switch (subStage) {
       //Case Filing
       case "CSFG#UDOC":

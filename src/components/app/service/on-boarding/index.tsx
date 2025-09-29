@@ -6,7 +6,7 @@ import {
 import { useUserDetails } from "@/utils/hooks/useUserPermissions";
 import ManageCaseHeader from "../ManageCaseHeader";
 
-export default function LoanDetails({ stage, subStage }) {
+export default function LoanDetails({ stage, subStage }: any) {
   const { serviceData } = UseContextAPI();
   const { isUser } = useUserDetails();
 

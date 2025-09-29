@@ -55,7 +55,7 @@ const OrganizationStatistics = ({
           id: `${month}-lop-cases`,
           header: () => "Cases",
           meta: { parent: `${month}-lop` },
-          cell: (info) =>
+          cell: (info: any) =>
             info.row.original.data.find((d: any) => d.month === month).lop
               .cases,
         },
@@ -63,7 +63,7 @@ const OrganizationStatistics = ({
           id: `${month}-lop-revenue`,
           header: () => "Revenue",
           meta: { parent: `${month}-lop` },
-          cell: (info) => {
+          cell: (info: any) => {
             const value = info.row.original.data.find(
               (d: any) => d.month === month
             ).lop.revenue;
@@ -74,7 +74,7 @@ const OrganizationStatistics = ({
           id: `${month}-eop-cases`,
           header: () => "Cases",
           meta: { parent: `${month}-eop` },
-          cell: (info) =>
+          cell: (info: any) =>
             info.row.original.data.find((d: any) => d.month === month).eop
               .cases,
         },
@@ -82,7 +82,7 @@ const OrganizationStatistics = ({
           id: `${month}-eop-revenue`,
           header: () => "Revenue",
           meta: { parent: `${month}-eop` },
-          cell: (info) => {
+          cell: (info: any) => {
             const value = info.row.original.data.find(
               (d: any) => d.month === month
             ).eop.revenue;
@@ -93,7 +93,7 @@ const OrganizationStatistics = ({
           id: `${month}-litigation-cases`,
           header: () => "Cases",
           meta: { parent: `${month}-litigation` },
-          cell: (info) =>
+          cell: (info: any) =>
             info.row.original.data.find((d: any) => d.month === month)
               .litigation.cases,
         },
@@ -101,7 +101,7 @@ const OrganizationStatistics = ({
           id: `${month}-litigation-revenue`,
           header: () => "Revenue",
           meta: { parent: `${month}-litigation` },
-          cell: (info) => {
+          cell: (info: any) => {
             const value = info.row.original.data.find(
               (d: any) => d.month === month
             ).litigation.revenue;

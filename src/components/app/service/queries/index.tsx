@@ -149,7 +149,7 @@ const RaiseQueries = ({ stage, subStage }: DynamicComponentProps) => {
     );
   };
 
-  const categoryIds = getCategoryIds();
+  const categoryIds: any = getCategoryIds();
 
   const handleAddItem = () => {
     setErrorMsg("");

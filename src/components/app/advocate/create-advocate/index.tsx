@@ -452,7 +452,8 @@ export const CreateAdvocate = () => {
         }
       } else {
         locationIds =
-          advocateData.advocate_locations?.map((loc) => loc.location_id) || [];
+          advocateData.advocate_locations?.map((loc: any) => loc.location_id) ||
+          [];
       }
 
       setFormData({

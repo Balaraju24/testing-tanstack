@@ -35,8 +35,8 @@ const AssignAdvocates = ({ stage, subStage }: AssignAdvocateProps) => {
       Array.isArray(serviceData.advocate_cases)
     ) {
       return serviceData.advocate_cases
-        .filter((advocateCase) => advocateCase.is_advocate_assigned)
-        .map((advocateCase) => advocateCase.advocate.id);
+        .filter((advocateCase: any) => advocateCase.is_advocate_assigned)
+        .map((advocateCase: any) => advocateCase.advocate.id);
     }
 
     if (serviceData?.advocate_ids && Array.isArray(serviceData.advocate_ids)) {
@@ -70,7 +70,7 @@ const AssignAdvocates = ({ stage, subStage }: AssignAdvocateProps) => {
   });
 
   const displayedAdvocates = hasAssignedAdvocates
-    ? serviceData?.advocate_cases?.map((item) => item.advocate) || []
+    ? serviceData?.advocate_cases?.map((item: any) => item.advocate) || []
     : lawyersData?.records || [];
 
   const { mutate: mutateAssignAdvocates, isPending: isAssigning } = useMutation(
@@ -98,7 +98,7 @@ const AssignAdvocates = ({ stage, subStage }: AssignAdvocateProps) => {
 
         const assignedAdvocateCases = selectedAdvocateIds.map((advocateId) => {
           const advocate = lawyersData?.records?.find(
-            (adv) => adv.id === advocateId
+            (adv: any) => adv.id === advocateId
           );
           return {
             id: Date.now() + advocateId,

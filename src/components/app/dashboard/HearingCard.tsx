@@ -138,7 +138,7 @@ const HearingCard = ({
                                 <div className="flex -space-x-2">
                                   {item.advocate_cases
                                     .slice(0, 2)
-                                    .map((advocate, idx) => {
+                                    .map((advocate: any, idx: string) => {
                                       const firstName =
                                         advocate?.advocate.first_name || "";
                                       const lastName =
@@ -181,29 +181,31 @@ const HearingCard = ({
 
                               <TooltipContent className="bg-white shadow-lg p-2 rounded text-sm">
                                 <div className="space-y-1">
-                                  {item.advocate_cases.map((adv, i) => (
-                                    <div
-                                      key={i}
-                                      className="flex items-center gap-2"
-                                    >
-                                      <Avatar className="size-5 border">
-                                        <AvatarImage
-                                          src={adv?.advocate.profile_pic}
-                                        />
-                                        <AvatarFallback className="bg-gray-100 text-xs">
-                                          {(adv?.advocate.first_name?.[0] ||
-                                            "") +
-                                            (adv?.advocate.last_name?.[0] ||
-                                              "")}
-                                        </AvatarFallback>
-                                      </Avatar>
-                                      <span>
-                                        {`${adv?.advocate.first_name || ""} ${
-                                          adv?.advocate.last_name || ""
-                                        }`}
-                                      </span>
-                                    </div>
-                                  ))}
+                                  {item.advocate_cases.map(
+                                    (adv: any, i: string) => (
+                                      <div
+                                        key={i}
+                                        className="flex items-center gap-2"
+                                      >
+                                        <Avatar className="size-5 border">
+                                          <AvatarImage
+                                            src={adv?.advocate.profile_pic}
+                                          />
+                                          <AvatarFallback className="bg-gray-100 text-xs">
+                                            {(adv?.advocate.first_name?.[0] ||
+                                              "") +
+                                              (adv?.advocate.last_name?.[0] ||
+                                                "")}
+                                          </AvatarFallback>
+                                        </Avatar>
+                                        <span>
+                                          {`${adv?.advocate.first_name || ""} ${
+                                            adv?.advocate.last_name || ""
+                                          }`}
+                                        </span>
+                                      </div>
+                                    )
+                                  )}
                                 </div>
                               </TooltipContent>
                             </Tooltip>

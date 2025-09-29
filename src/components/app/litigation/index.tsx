@@ -302,11 +302,7 @@ const Litigations = ({
                   litigationsData?.records?.length > 0 ? (
                   <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xll:grid-cols-4  2xl:gap-4">
                     {litigationsData?.records?.map((record: any) => (
-                      <CaseCard
-                        key={record.id}
-                        record={record}
-                        refetch={refetch}
-                      />
+                      <CaseCard key={record.id} record={record} />
                     ))}
                   </div>
                 ) : (

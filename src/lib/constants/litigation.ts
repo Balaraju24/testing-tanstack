@@ -35,10 +35,7 @@ import EvictionorTenancynoticeIcon from "@/components/icons/litigationCasesIcons
 import StatutoryIcon from "@/components/icons/litigationCasesIcons/loan-demand-notice";
 import Inspection from "@/components/icons/litigationCasesIcons/inspection-icon";
 
-export const issueIcons: Record<
-  string,
-  (props: { className?: string }) => JSX.Element
-> = {
+export const issueIcons: Record<string, any> = {
   // Existing entries
   "Arbitration Petition": ArbitrationPetetion,
   Conciliation: Conclilition,
