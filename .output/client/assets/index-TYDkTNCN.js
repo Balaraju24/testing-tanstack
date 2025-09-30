@@ -1,0 +1,1 @@
+import{j as o}from"./main-Cfdx-166.js";import{N as t}from"./NoDataBlock-gmsqOTLj.js";import"./no-cases-data-1cuEGLat.js";import"./useUserPermissions-EkOdBJwI.js";import"./userDetails-BK07mqDr.js";import"./noDataConstants-nJx6rPaL.js";const r=()=>o.jsx(t,{onHoldMessage:"Feature",isOnHold:!0,height:"h-[calc(100vh-200px)]",show:!0}),m=r;export{m as component};

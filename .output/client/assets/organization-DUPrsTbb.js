@@ -1,1 +1,0 @@
-import{$ as s}from"./fetch-BYBqU-UB.js";const n=async t=>{try{return await s.get("/users",t)}catch(r){throw r}},o=async t=>{try{return await s.post("/users/register-organisation",t)}catch(r){throw r}},c=async(t,r)=>{try{return await s.patch(`/users/update-organisation/${t}`,r)}catch(a){throw a}};export{o as a,n as g,c as u};
