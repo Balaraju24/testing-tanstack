@@ -1,3 +1,5 @@
 {
-  "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }]
+  "buildCommand": "vite build",
+  "outputDirectory": ".output",
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
