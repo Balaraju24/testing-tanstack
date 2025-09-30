@@ -1,0 +1,1 @@
+import{u as r}from"./userDetails-BKeSBteA.js";import{a as t}from"./main-CbopZ6M6.js";const M=()=>{const s=t(r,e=>e.user)?.user_type;return{isManager:()=>s=="MANAGER",isAdvocate:()=>s==="ADVOCATE",isUser:()=>s==="CUSTOMER",getUserPermissions:()=>{switch(s){case"MANAGER":case"ADVOCATE":case"CUSTOMER":case"ADMIN":return!0;default:return[]}},isAdmin:()=>s==="ADMIN"}};export{M as u};

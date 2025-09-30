@@ -1,0 +1,441 @@
+import { jsxs, jsx } from "react/jsx-runtime";
+import { U as UseContextAPI } from "./Provider-DRuE0d-A.js";
+import { L as LoadingComponent } from "./Loading-CtQhAIXf.js";
+import { g as getAllDocsAPIV2, e as docsViewAPI } from "./service-1g9dZr4o.js";
+import { u as userStore } from "./userDetails-Dbr9T6uw.js";
+import { useQuery, useMutation } from "@tanstack/react-query";
+import { useParams } from "@tanstack/react-router";
+import { useStore } from "@tanstack/react-store";
+import { A as ApprovedIcon } from "./approved-Icon-D4Mj_64A.js";
+import { R as RejectIcon } from "./reject-icon-B4PaiBZt.js";
+import { V as ViewIcon } from "./view-icon-BDRfyII2.js";
+import { B as Button } from "./router-o2MrkizZ.js";
+import { C as Card, a as CardHeader, b as CardContent } from "./card-DL-Nbx-j.js";
+import { T as TooltipProvider, a as Tooltip, b as TooltipTrigger, c as TooltipContent } from "./tooltip-D8srg3RR.js";
+import { s as sliceFilename } from "./manage-CWSyPq63.js";
+import { g as getFileIcon } from "./FileIcon-CxEHPjFg.js";
+import { D as Dialog, d as DialogTrigger, a as DialogContent, e as DialogClose } from "./dialog-6uxmGonW.js";
+import { i as imageTypes } from "./statusConstants-t7T05Rlh.js";
+import { X } from "lucide-react";
+import { D as DocsCommentsSection } from "./DocsCommentsSection-Dgcs8l8-.js";
+import { T as TabValuesForViewCase } from "./TabValuesForViewCase-CyAukXxK.js";
+const NoFilesData = ({ className }) => {
+  return /* @__PURE__ */ jsxs(
+    "svg",
+    {
+      className,
+      viewBox: "0 0 500 380",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg",
+      children: [
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M399.276 200.216C400.58 238.665 316.038 318.742 215.049 291.977C168.081 279.527 172.662 257.071 137.439 228.372C116.446 211.267 85.9739 198.65 78.0589 173.295C71.2206 151.41 76.3678 127.617 89.5978 111.925C119.351 76.6366 178.232 51.6355 234.25 105C290.268 158.365 395.899 101.053 399.276 200.216Z",
+            fill: "url(#paint0_linear_5056_16969)"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            fillRule: "evenodd",
+            clipRule: "evenodd",
+            d: "M349.778 115.504V87.0851C349.778 71.3901 337.054 58.6667 321.359 58.6667H179.266C163.571 58.6667 150.848 71.3901 150.848 87.0851V158.132",
+            fill: "white"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M349.778 115.504V87.0851C349.778 71.3901 337.054 58.6667 321.359 58.6667H179.266C163.571 58.6667 150.848 71.3901 150.848 87.0851V158.132",
+            stroke: "#E1E4E5",
+            strokeWidth: "2.29444"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            fillRule: "evenodd",
+            clipRule: "evenodd",
+            d: "M150.848 120.473H242.711C245.05 120.474 247.353 119.897 249.415 118.793C251.477 117.69 253.235 116.095 254.533 114.15L274.469 84.1827C275.769 82.2285 277.533 80.6269 279.604 79.521C281.674 78.4151 283.986 77.8395 286.334 77.8455H349.778C365.473 77.8455 378.197 90.5688 378.197 106.264V248.357C378.197 264.052 365.473 276.776 349.778 276.776H150.848C135.153 276.776 122.43 264.052 122.43 248.357V148.892C122.43 133.197 135.153 120.473 150.848 120.473Z",
+            fill: "white",
+            stroke: "#E1E4E5",
+            strokeWidth: "2.29444"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M399.014 273.89C394.744 273.89 391.283 270.594 391.283 266.527C391.283 262.46 394.744 259.164 399.014 259.164C403.285 259.164 406.746 262.46 406.746 266.527C406.746 270.594 403.285 273.89 399.014 273.89Z",
+            fill: "#E1E4E5"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M162.477 291.679C161.054 291.679 159.9 290.525 159.9 289.102C159.9 287.678 161.054 286.524 162.477 286.524C163.901 286.524 165.055 287.678 165.055 289.102C165.055 290.525 163.901 291.679 162.477 291.679Z",
+            fill: "#E1E4E5"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M314.666 118.42C312.633 118.42 310.984 116.772 310.984 114.738C310.984 112.705 312.633 111.057 314.666 111.057C316.699 111.057 318.348 112.705 318.348 114.738C318.348 116.772 316.699 118.42 314.666 118.42Z",
+            fill: "#E1E4E5"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M97.6003 225.761C98.1146 227.68 96.9756 229.653 95.0563 230.167C93.137 230.681 91.1642 229.542 90.6499 227.623C90.1357 225.704 91.2746 223.731 93.1939 223.217C95.1132 222.703 97.086 223.841 97.6003 225.761Z",
+            fill: "#E1E4E5"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M391.396 133.007C389.363 133.007 387.715 131.689 387.715 130.062C387.715 128.435 389.363 127.116 391.396 127.116C393.43 127.116 395.078 128.435 395.078 130.062C395.078 131.689 393.43 133.007 391.396 133.007Z",
+            fill: "#E1E4E5"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M103.429 253.81H103.526C104.096 261.891 110.106 262.015 110.106 262.015C110.106 262.015 103.479 262.145 103.479 271.482C103.479 262.145 96.8516 262.015 96.8516 262.015C96.8516 262.015 102.859 261.891 103.429 253.81ZM422.504 161.615H422.604C423.197 170.149 429.442 170.28 429.442 170.28C429.442 170.28 422.555 170.417 422.555 180.277C422.555 170.417 415.668 170.28 415.668 170.28C415.668 170.28 421.911 170.149 422.504 161.615Z",
+            fill: "#E1E4E5"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M260.436 179.962C260.436 177.769 258.657 175.99 256.464 175.99C254.27 175.99 252.492 177.769 252.492 179.962V212.957C252.492 215.151 254.27 216.929 256.464 216.929C258.657 216.929 260.436 215.151 260.436 212.957V179.962Z",
+            fill: "white"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M272.966 200.432C275.159 200.432 276.938 198.653 276.938 196.46C276.938 194.266 275.159 192.488 272.966 192.488H239.971C237.777 192.488 235.999 194.266 235.999 196.46C235.999 198.653 237.777 200.432 239.971 200.432H272.966Z",
+            fill: "white"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M312.418 243.819L279.445 218.709",
+            stroke: "#E3E3E3",
+            strokeWidth: "11.1111",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M255.706 243.962C284.629 243.962 308.076 220.515 308.076 191.592C308.076 162.669 284.629 139.222 255.706 139.222C226.783 139.222 203.336 162.669 203.336 191.592C203.336 220.515 226.783 243.962 255.706 243.962Z",
+            fill: "#E3E3E3",
+            stroke: "#E3E3E3",
+            strokeWidth: "10.1917",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M230.156 194.58H281.519M230.156 174.035H281.519M230.156 215.41H266.11",
+            stroke: "white",
+            strokeWidth: "5.55556",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M207.752 341V324.2H210.152L218.72 337.088V324.2H221.12V341H218.72L210.152 328.136V341H207.752ZM230.027 341.288C228.891 341.288 227.867 341.024 226.955 340.496C226.059 339.968 225.347 339.232 224.819 338.288C224.307 337.328 224.051 336.224 224.051 334.976C224.051 333.696 224.315 332.584 224.843 331.64C225.371 330.68 226.091 329.936 227.003 329.408C227.915 328.88 228.939 328.616 230.075 328.616C231.227 328.616 232.251 328.88 233.147 329.408C234.043 329.936 234.747 330.672 235.259 331.616C235.787 332.56 236.051 333.672 236.051 334.952C236.051 336.232 235.787 337.344 235.259 338.288C234.747 339.232 234.035 339.968 233.123 340.496C232.211 341.024 231.179 341.288 230.027 341.288ZM230.027 339.224C230.683 339.224 231.275 339.064 231.803 338.744C232.347 338.424 232.779 337.952 233.099 337.328C233.435 336.688 233.603 335.896 233.603 334.952C233.603 334.008 233.443 333.224 233.123 332.6C232.803 331.96 232.371 331.48 231.827 331.16C231.299 330.84 230.715 330.68 230.075 330.68C229.435 330.68 228.843 330.84 228.299 331.16C227.755 331.48 227.315 331.96 226.979 332.6C226.659 333.224 226.499 334.008 226.499 334.952C226.499 335.896 226.659 336.688 226.979 337.328C227.315 337.952 227.747 338.424 228.275 338.744C228.819 339.064 229.403 339.224 230.027 339.224ZM245.135 341V324.2H255.575V326.168H247.535V331.616H254.255V333.536H247.535V341H245.135ZM258.191 341V328.904H260.591V341H258.191ZM259.415 326.624C258.951 326.624 258.567 326.48 258.263 326.192C257.975 325.904 257.831 325.536 257.831 325.088C257.831 324.656 257.975 324.304 258.263 324.032C258.567 323.744 258.951 323.6 259.415 323.6C259.863 323.6 260.239 323.744 260.543 324.032C260.847 324.304 260.999 324.656 260.999 325.088C260.999 325.536 260.847 325.904 260.543 326.192C260.239 326.48 259.863 326.624 259.415 326.624ZM264.023 341V323.72H266.423V341H264.023ZM275.19 341.288C274.038 341.288 273.014 341.024 272.118 340.496C271.222 339.968 270.518 339.232 270.006 338.288C269.51 337.344 269.262 336.248 269.262 335C269.262 333.72 269.51 332.608 270.006 331.664C270.518 330.704 271.222 329.96 272.118 329.432C273.014 328.888 274.054 328.616 275.238 328.616C276.422 328.616 277.438 328.88 278.286 329.408C279.134 329.936 279.79 330.64 280.254 331.52C280.718 332.384 280.95 333.344 280.95 334.4C280.95 334.56 280.942 334.736 280.926 334.928C280.926 335.104 280.918 335.304 280.902 335.528H271.014V333.824H278.55C278.502 332.816 278.166 332.032 277.542 331.472C276.918 330.896 276.142 330.608 275.214 330.608C274.558 330.608 273.958 330.76 273.414 331.064C272.87 331.352 272.43 331.784 272.094 332.36C271.774 332.92 271.614 333.632 271.614 334.496V335.168C271.614 336.064 271.774 336.824 272.094 337.448C272.43 338.056 272.87 338.52 273.414 338.84C273.958 339.144 274.55 339.296 275.19 339.296C275.958 339.296 276.59 339.128 277.086 338.792C277.582 338.456 277.95 338 278.19 337.424H280.59C280.382 338.16 280.03 338.824 279.534 339.416C279.038 339.992 278.422 340.448 277.686 340.784C276.966 341.12 276.134 341.288 275.19 341.288ZM288.296 341.288C287.272 341.288 286.376 341.12 285.608 340.784C284.84 340.448 284.232 339.976 283.784 339.368C283.336 338.76 283.064 338.048 282.968 337.232H285.416C285.496 337.616 285.648 337.968 285.872 338.288C286.112 338.608 286.432 338.864 286.832 339.056C287.248 339.248 287.736 339.344 288.296 339.344C288.824 339.344 289.256 339.272 289.592 339.128C289.944 338.968 290.2 338.76 290.36 338.504C290.52 338.232 290.6 337.944 290.6 337.64C290.6 337.192 290.488 336.856 290.264 336.632C290.056 336.392 289.736 336.208 289.304 336.08C288.888 335.936 288.384 335.808 287.792 335.696C287.232 335.6 286.688 335.472 286.16 335.312C285.648 335.136 285.184 334.92 284.768 334.664C284.368 334.408 284.048 334.088 283.808 333.704C283.568 333.304 283.448 332.816 283.448 332.24C283.448 331.552 283.632 330.936 284 330.392C284.368 329.832 284.888 329.4 285.56 329.096C286.248 328.776 287.056 328.616 287.984 328.616C289.328 328.616 290.408 328.936 291.224 329.576C292.04 330.216 292.52 331.12 292.664 332.288H290.336C290.272 331.744 290.032 331.328 289.616 331.04C289.2 330.736 288.648 330.584 287.96 330.584C287.272 330.584 286.744 330.72 286.376 330.992C286.008 331.264 285.824 331.624 285.824 332.072C285.824 332.36 285.928 332.616 286.136 332.84C286.344 333.064 286.648 333.256 287.048 333.416C287.464 333.56 287.968 333.696 288.56 333.824C289.408 333.984 290.168 334.184 290.84 334.424C291.512 334.664 292.048 335.016 292.448 335.48C292.848 335.944 293.048 336.608 293.048 337.472C293.064 338.224 292.872 338.888 292.472 339.464C292.088 340.04 291.536 340.488 290.816 340.808C290.112 341.128 289.272 341.288 288.296 341.288Z",
+            fill: "black",
+            fillOpacity: "0.5"
+          }
+        ),
+        /* @__PURE__ */ jsx("defs", { children: /* @__PURE__ */ jsxs(
+          "linearGradient",
+          {
+            id: "paint0_linear_5056_16969",
+            x1: "294.713",
+            y1: "433.129",
+            x2: "154.118",
+            y2: "-198.177",
+            gradientUnits: "userSpaceOnUse",
+            children: [
+              /* @__PURE__ */ jsx("stop", { stopColor: "white" }),
+              /* @__PURE__ */ jsx("stop", { offset: "1", stopColor: "#EEEEEE" })
+            ]
+          }
+        ) })
+      ]
+    }
+  );
+};
+function NewIcon({
+  className
+}) {
+  return /* @__PURE__ */ jsxs(
+    "svg",
+    {
+      width: "32",
+      height: "16",
+      viewBox: "0 0 40 20",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg",
+      children: [
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M30.911 19.0659H3.6672C2.6946 19.0659 1.76183 18.6796 1.0741 17.9918C0.386365 17.3041 0 16.3713 0 15.3987V3.6672C0 2.6946 0.386365 1.76183 1.0741 1.0741C1.76183 0.386364 2.6946 0 3.6672 0H30.911C31.4168 5.26656e-06 31.9172 0.104662 32.3806 0.30739C32.8441 0.510118 33.2606 0.806534 33.6039 1.178L39.0258 7.04376C39.6521 7.72138 40 8.61021 40 9.53296C40 10.4557 39.6521 11.3445 39.0258 12.0222L33.6039 17.8879C33.2606 18.2594 32.8441 18.5558 32.3806 18.7585C31.9172 18.9613 31.4168 19.0659 30.911 19.0659Z",
+            fill: "#F91F3E"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M7.32507 6.78335L10.0323 10.8799V6.74543C10.0323 6.47674 10.09 6.27514 10.2055 6.14063C10.2631 6.07401 10.335 6.02128 10.4159 5.98639C10.4968 5.95151 10.5845 5.93537 10.6725 5.93919C10.7623 5.93493 10.8519 5.95081 10.9347 5.98567C11.0175 6.02052 11.0915 6.07347 11.1512 6.14063C11.2683 6.27519 11.327 6.47679 11.3272 6.74543V12.2121C11.3272 12.8223 11.0743 13.1273 10.5686 13.1272C10.4525 13.1289 10.337 13.1105 10.2272 13.0728C10.1221 13.034 10.0254 12.9752 9.94275 12.8996C9.85044 12.8167 9.76774 12.7237 9.69619 12.6223C9.62024 12.5164 9.54437 12.4081 9.46859 12.2973L6.82691 8.24839V12.3213C6.82691 12.5869 6.76536 12.7876 6.64227 12.9236C6.58279 12.99 6.50956 13.0426 6.42766 13.0777C6.34577 13.1129 6.25719 13.1298 6.16811 13.1272C6.07793 13.1307 5.98811 13.1141 5.90521 13.0784C5.82231 13.0428 5.74843 12.989 5.68899 12.9211C5.56877 12.7837 5.50877 12.5837 5.50899 12.3211V6.95871C5.50182 6.77693 5.52751 6.59536 5.58483 6.42271C5.64623 6.27857 5.75056 6.15685 5.88363 6.07415C6.01706 5.98565 6.17368 5.93859 6.33379 5.93887C6.43823 5.93474 6.54235 5.9529 6.63923 5.99214C6.7361 6.03138 6.82351 6.09081 6.89563 6.16647C6.9741 6.24946 7.044 6.34016 7.10427 6.43719C7.17547 6.54791 7.24907 6.6633 7.32507 6.78335Z",
+            fill: "white"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M17.3016 7.14368H14.1297V8.85064H17.0504C17.2654 8.85064 17.4258 8.89883 17.5317 8.9952C17.5843 9.04341 17.6257 9.10252 17.6532 9.16839C17.6806 9.23427 17.6934 9.30533 17.6905 9.37664C17.6931 9.44844 17.6805 9.51997 17.6536 9.58657C17.6266 9.65317 17.5859 9.71333 17.5341 9.76312C17.4297 9.86296 17.2684 9.91283 17.0504 9.91272H14.1297V11.8898H17.4107C17.6318 11.8898 17.7986 11.9412 17.9109 12.044C17.9669 12.0962 18.0109 12.1598 18.0399 12.2306C18.0689 12.3014 18.0822 12.3776 18.0789 12.4541C18.0816 12.529 18.0679 12.6036 18.0389 12.6728C18.0099 12.7419 17.9662 12.8039 17.9109 12.8546C17.7986 12.9576 17.6319 13.009 17.4107 13.0087H13.5843C13.2776 13.0087 13.0571 12.9407 12.9229 12.8048C12.7887 12.6689 12.7216 12.4491 12.7215 12.1456V6.9208C12.7152 6.75089 12.746 6.58165 12.8117 6.4248C12.8682 6.30023 12.9686 6.20078 13.0937 6.14536C13.2491 6.08149 13.4164 6.05149 13.5843 6.05736H17.3016C17.5259 6.05736 17.6926 6.1071 17.8018 6.20656C17.8558 6.25599 17.8984 6.31658 17.9266 6.38411C17.9549 6.45165 17.9681 6.52453 17.9653 6.59768C17.9684 6.67157 17.9554 6.74524 17.9271 6.81359C17.8989 6.88195 17.8561 6.94334 17.8018 6.99352C17.6927 7.09379 17.5259 7.14384 17.3016 7.14368Z",
+            fill: "white"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M23.9752 11.9134L22.8513 7.74535L21.7133 11.9134C21.6249 12.2297 21.5547 12.4566 21.5026 12.594C21.445 12.7386 21.3511 12.866 21.2299 12.9637C21.0829 13.0785 20.8994 13.1366 20.7131 13.1272C20.5641 13.1331 20.4161 13.0997 20.2841 13.0302C20.1705 12.9642 20.0765 12.8692 20.0115 12.755C19.9359 12.6227 19.8785 12.4808 19.8407 12.3332C19.7963 12.1704 19.7567 12.0194 19.7219 11.8802L18.5651 7.20063C18.5067 6.99825 18.4718 6.78981 18.4611 6.57944C18.4594 6.49456 18.4753 6.41027 18.508 6.33191C18.5407 6.25356 18.5893 6.18286 18.6507 6.12432C18.7125 6.06349 18.7859 6.01575 18.8666 5.98396C18.9473 5.95216 19.0335 5.93696 19.1202 5.93928C19.3762 5.93928 19.5484 6.02146 19.6369 6.18584C19.7462 6.41292 19.8243 6.65378 19.8689 6.90184L20.7793 10.9606L21.7987 7.16272C21.8541 6.93769 21.9222 6.716 22.0027 6.49872C22.0647 6.34412 22.1659 6.2084 22.2965 6.10503C22.4565 5.98683 22.6526 5.92813 22.8512 5.93904C23.0504 5.92676 23.2472 5.98843 23.4037 6.11224C23.5246 6.21308 23.6184 6.34262 23.6763 6.48903C23.7268 6.62503 23.7948 6.84951 23.8803 7.16247L24.9091 10.9603L25.8195 6.90159C25.8526 6.73359 25.8946 6.56745 25.9451 6.40383C25.9859 6.28141 26.0559 6.17075 26.1491 6.08143C26.206 6.03108 26.2725 5.99255 26.3445 5.96811C26.4165 5.94366 26.4926 5.93378 26.5685 5.93904C26.6546 5.93716 26.7402 5.95232 26.8204 5.98364C26.9005 6.01495 26.9738 6.06181 27.0358 6.12152C27.0982 6.17996 27.1476 6.25095 27.1807 6.32983C27.2138 6.4087 27.2298 6.49368 27.2278 6.57919C27.2152 6.78936 27.1803 6.99759 27.1238 7.20039L25.9669 11.8799C25.8878 12.1963 25.8222 12.428 25.7701 12.5749C25.7161 12.7243 25.6247 12.8573 25.5046 12.9614C25.3549 13.0801 25.1664 13.1392 24.9757 13.127C24.7898 13.1364 24.6066 13.0793 24.459 12.966C24.3385 12.871 24.2452 12.7458 24.1887 12.6031C24.1381 12.4691 24.0669 12.2392 23.9752 11.9134Z",
+            fill: "white"
+          }
+        )
+      ]
+    }
+  );
+}
+const ViewCaseFilesDialog = ({
+  file,
+  handleDocumentClick,
+  children
+}) => {
+  return /* @__PURE__ */ jsxs(Dialog, { children: [
+    /* @__PURE__ */ jsx(
+      DialogTrigger,
+      {
+        className: "w-full",
+        onClick: () => handleDocumentClick(file.id),
+        children: /* @__PURE__ */ jsx("div", { children })
+      }
+    ),
+    /* @__PURE__ */ jsxs(
+      DialogContent,
+      {
+        className: "w-[90%] p-2 bg-white",
+        "aria-describedby": void 0,
+        children: [
+          /* @__PURE__ */ jsxs("div", { className: "flex items-center justify-between w-full", children: [
+            /* @__PURE__ */ jsx("div", { className: "text-sm", children: file.file_name }),
+            /* @__PURE__ */ jsx(DialogClose, { asChild: true, className: "hover:bg-gray-100", children: /* @__PURE__ */ jsxs(Button, { className: "w-fit h-fit bg-transparent hover:bg-transparent py-0 [&_svg]:size-6", children: [
+              " ",
+              /* @__PURE__ */ jsx(X, {})
+            ] }) })
+          ] }),
+          /* @__PURE__ */ jsx("hr", { className: "mt-2 mb-0 border-t-[0.5px] border-gray-200 shadow-none" }),
+          /* @__PURE__ */ jsxs("div", { className: "flex", children: [
+            /* @__PURE__ */ jsx("div", { className: "w-3/5 border-r border-gray-200 px-2 flex flex-col", children: /* @__PURE__ */ jsx("div", { className: "flex", children: imageTypes.includes(file.file_type) ? /* @__PURE__ */ jsx(
+              "img",
+              {
+                src: file.download_url,
+                alt: "Full Image",
+                className: "w-full h-[70vh] object-contain rounded-lg"
+              }
+            ) : /* @__PURE__ */ jsx(
+              "iframe",
+              {
+                src: file.download_url,
+                title: "Full Image",
+                className: "w-full h-[70vh] object-contain rounded-lg"
+              }
+            ) }) }),
+            /* @__PURE__ */ jsx("div", { className: "w-2/5 flex flex-col", children: /* @__PURE__ */ jsx(DocsCommentsSection, { documentId: file.id }) })
+          ] })
+        ]
+      }
+    )
+  ] });
+};
+const FileCard = ({
+  file,
+  userType,
+  handleDocumentClick
+}) => {
+  const isRecordUnread = file.doc_read_status?.some(
+    (item) => !item.is_seen && item.user_id === userType
+  );
+  const icon = getFileIcon(file.file_type, file.download_url, file.file_name);
+  const cardHeaderStyle = file.file_type === "application/pdf" || file.file_type === "pdf" ? "bg-[#F3F3F3]" : "bg-gray-100";
+  return /* @__PURE__ */ jsxs(Card, { className: "w-full rounded-none mt-2 border-gray-200", children: [
+    /* @__PURE__ */ jsx(
+      ViewCaseFilesDialog,
+      {
+        file,
+        handleDocumentClick,
+        children: /* @__PURE__ */ jsxs(
+          CardHeader,
+          {
+            className: `${cardHeaderStyle} relative flex items-center p-0 space-y-0 justify-center min-h-28 w-full`,
+            children: [
+              isRecordUnread && /* @__PURE__ */ jsx("div", { className: "absolute top-1 left-1 px-1", children: /* @__PURE__ */ jsx(NewIcon, {}) }),
+              /* @__PURE__ */ jsxs("span", { className: "text-green-500 absolute top-3 right-3", children: [
+                file?.verification_status === "APPROVED" && /* @__PURE__ */ jsx(ApprovedIcon, {}),
+                file?.verification_status === "REJECTED" && /* @__PURE__ */ jsx(RejectIcon, {})
+              ] }),
+              /* @__PURE__ */ jsx(
+                Button,
+                {
+                  className: "w-full h-fit p-0 flex justify-center items-center rounded-none border-none bg-transparent overflow-hidden [&_svg]:size-14",
+                  "aria-label": "View Image",
+                  children: icon
+                }
+              )
+            ]
+          }
+        )
+      }
+    ),
+    /* @__PURE__ */ jsxs(CardContent, { className: "w-full p-2 text-left flex justify-between items-center border-t border-gray-200", children: [
+      /* @__PURE__ */ jsx(TooltipProvider, { children: /* @__PURE__ */ jsxs(Tooltip, { children: [
+        /* @__PURE__ */ jsx(TooltipTrigger, { children: /* @__PURE__ */ jsx("div", { className: "font-medium text-start text-xs", children: file?.file_name ? sliceFilename(file?.file_name, 10) : null }) }),
+        /* @__PURE__ */ jsx(TooltipContent, { className: "bg-white border p-2 w-60", children: file?.file_name })
+      ] }) }),
+      /* @__PURE__ */ jsx(
+        "div",
+        {
+          className: "text-gray-500 hover:text-gray-700 flex items-center gap-2",
+          onClick: () => handleDocumentClick(file?.id),
+          children: /* @__PURE__ */ jsx("a", { href: file.download_url, target: "_blank", rel: "noopener noreferrer", children: /* @__PURE__ */ jsx(ViewIcon, { className: "w-4 h-4" }) })
+        }
+      )
+    ] })
+  ] });
+};
+const ServiceFiles = () => {
+  const { service_id } = useParams({ strict: false });
+  const userDetails = useStore(userStore, (state) => state["user"]);
+  const userType = userDetails?.id;
+  const { caseStagesData } = UseContextAPI();
+  const {
+    isLoading,
+    data: filesDetails,
+    refetch
+  } = useQuery({
+    queryKey: ["file-details", service_id],
+    queryFn: async () => {
+      if (!service_id) return;
+      const response = await getAllDocsAPIV2(service_id);
+      if (response.status === 200 || response.status === 201) {
+        return response.data?.data;
+      } else {
+        throw new Error("Failed to fetch documents");
+      }
+    },
+    enabled: !!service_id,
+    refetchOnWindowFocus: false
+  });
+  const { mutate: mutateFilesView } = useMutation({
+    mutationFn: async (documentId) => {
+      const payload = { doc_id: Number(documentId) };
+      if (service_id) {
+        const response = await docsViewAPI(service_id, payload);
+        return response?.data;
+      }
+    },
+    onSuccess: () => {
+      refetch();
+    }
+  });
+  const groupBySubstage = filesDetails?.reduce(
+    (group, file) => {
+      if (file.key === null || file.download_url === null) {
+        return group;
+      }
+      const substage = file.case_sub_stage ?? "Offline Payments";
+      if (substage === "CSFG#ADDO" || substage === "QURI#MDSC") {
+        const category = file.category ?? "Uncategorized";
+        if (!group[substage]) {
+          group[substage] = {};
+        }
+        const subGroup = group[substage];
+        if (!subGroup[category]) {
+          subGroup[category] = [];
+        }
+        subGroup[category].push(file);
+      } else {
+        if (!group[substage]) {
+          group[substage] = [];
+        }
+        group[substage].push(file);
+      }
+      return group;
+    },
+    {}
+  );
+  const handleDocumentClick = (documentId) => {
+    const isRecordUnread = filesDetails?.some(
+      (record) => record.id === documentId && record?.doc_read_status?.some(
+        (item) => !item.is_seen && item.user_id === userType
+      )
+    );
+    if (isRecordUnread) {
+      mutateFilesView(documentId);
+    }
+  };
+  return /* @__PURE__ */ jsxs("div", { className: "border border-gray-300", children: [
+    /* @__PURE__ */ jsx(TabValuesForViewCase, {}),
+    /* @__PURE__ */ jsx("div", { className: "h-[calc(100vh-155px)] relative", children: isLoading ? /* @__PURE__ */ jsx(LoadingComponent, { loading: isLoading, message: "Files..." }) : /* @__PURE__ */ jsx("div", { className: "p-4 h-full overflow-auto", children: Object.keys(groupBySubstage).length === 0 ? /* @__PURE__ */ jsx("div", { className: "text-center text-lg h-full flex items-center justify-center", children: /* @__PURE__ */ jsx(NoFilesData, { className: "w-1/3" }) }) : /* @__PURE__ */ jsx("div", { className: "space-y-4", children: Object.entries(groupBySubstage).map(([substage, group]) => /* @__PURE__ */ jsxs(
+      "div",
+      {
+        className: "space-y-3 border-b last:border-b-0 pb-4 border-gray-200 ",
+        children: [
+          /* @__PURE__ */ jsx("h3", { className: "font-medium text-md leading-none capitalize", children: caseStagesData?.sub_stages?.find(
+            (sub) => sub.code === substage
+          )?.title || substage || "--" }),
+          Array.isArray(group) ? /* @__PURE__ */ jsx("div", { className: "grid grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5 gap-4", children: group.map((file) => /* @__PURE__ */ jsx(
+            FileCard,
+            {
+              file,
+              userType,
+              handleDocumentClick
+            },
+            file.id
+          )) }) : Object.entries(group).map(
+            ([category, files]) => /* @__PURE__ */ jsxs("div", { className: "space-y-2 ml-6", children: [
+              /* @__PURE__ */ jsx("ul", { className: "list-disc pl-6 marker:text-gray-900", children: /* @__PURE__ */ jsx("li", { className: "text-sm font-semibold text-gray-600", children: category }) }),
+              /* @__PURE__ */ jsx("div", { className: "grid grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5 gap-4", children: files.map((file) => /* @__PURE__ */ jsx(
+                FileCard,
+                {
+                  file,
+                  userType,
+                  handleDocumentClick
+                },
+                file.id
+              )) })
+            ] }, category)
+          )
+        ]
+      },
+      substage
+    )) }) }) })
+  ] });
+};
+export {
+  ServiceFiles as S
+};

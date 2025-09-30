@@ -1,0 +1,1 @@
+import{s}from"./main-CbopZ6M6.js";function n(){try{if(typeof window>"u")return{user:null};const e=localStorage.getItem("userDetails");if(e)try{return JSON.parse(e)}catch{}return{user:null}}catch{return{user:null}}}const a=n(),r=new s(a),u=e=>{r.setState(t=>({...t,...e})),!(typeof window>"u")&&localStorage.setItem("userDetails",JSON.stringify(r.state))};export{u as a,r as u};

@@ -1,0 +1,1 @@
+import{j as s,c as a}from"./main-CbopZ6M6.js";const n="/assets/loading-icon-BtZ7VRYd.svg",r=({loading:e,message:i,className:t})=>e?s.jsx("div",{role:"alert","aria-live":"assertive",className:a("absolute inset-0 flex flex-col items-center justify-center  z-50",t),children:s.jsx("img",{src:n,alt:"loading",className:"w-36 h-36"})}):null;export{r as L};
