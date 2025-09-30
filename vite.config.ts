@@ -4,21 +4,17 @@ import tsConfigPaths from "vite-tsconfig-paths";
 import viteReact from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
-  server: {
-    port: 3000,
-  },
+  server: { port: 3000 },
   plugins: [
-    tsConfigPaths({
-      projects: ["./tsconfig.json"],
-    }),
+    tsConfigPaths({ projects: ["./tsconfig.json"] }),
     tanstackStart(),
     viteReact(),
     tailwindcss(),
   ],
   build: {
+    outDir: ".output",
     rollupOptions: {
       output: {
-        // This helps avoid absolute path issues
         manualChunks: undefined,
       },
     },

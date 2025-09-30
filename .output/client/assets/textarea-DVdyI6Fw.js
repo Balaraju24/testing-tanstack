@@ -1,1 +1,0 @@
-import{j as r,c as o}from"./main-CbopZ6M6.js";function s({className:e,...t}){return r.jsx("textarea",{"data-slot":"textarea",className:o("flex h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none    disabled:cursor-not-allowed  md:text-sm",e),...t})}export{s as T};
