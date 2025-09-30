@@ -2,7 +2,7 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import { defineConfig } from "vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 import viteReact from "@vitejs/plugin-react";
-
+import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   server: {
     port: 3000,
@@ -13,8 +13,14 @@ export default defineConfig({
     }),
     tanstackStart(),
     viteReact(),
+    tailwindcss(),
   ],
   build: {
-    outDir: ".output", // Or your desired output directory name
+    rollupOptions: {
+      output: {
+        // This helps avoid absolute path issues
+        manualChunks: undefined,
+      },
+    },
   },
 });
