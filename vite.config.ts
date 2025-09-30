@@ -14,4 +14,7 @@ export default defineConfig({
     tanstackStart(),
     viteReact(),
   ],
+  build: {
+    outDir: ".output", // Or your desired output directory name
+  },
 });
