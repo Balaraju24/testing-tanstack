@@ -1,0 +1,42 @@
+import { M as ManageComponent } from './index-Bb_5490h.mjs';
+import 'react/jsx-runtime';
+import 'react';
+import './Provider-DRuE0d-A.mjs';
+import './litigations-2Q1m8RsY.mjs';
+import './fetch-Cpm1bFFM.mjs';
+import 'js-cookie';
+import './manage-tW0NLyej.mjs';
+import '@tanstack/react-query';
+import '@tanstack/react-router';
+import './Loading-DQypZbMn.mjs';
+import './router-e7zdrxGz.mjs';
+import '@tanstack/react-router-ssr-query';
+import '@radix-ui/react-slot';
+import 'class-variance-authority';
+import 'clsx';
+import 'tailwind-merge';
+import 'sonner';
+import 'framer-motion';
+import 'react-error-boundary';
+import './CaseFilingIcon-Dywh8hPV.mjs';
+import './legal-notice-icon-ivaufGCR.mjs';
+import './notes-edit-icon-B2gT4vHe.mjs';
+import '@radix-ui/react-accordion';
+import './tooltip-BKF0DBvK.mjs';
+import '@radix-ui/react-tooltip';
+import './manage-CWSyPq63.mjs';
+import 'dayjs';
+import 'dayjs/plugin/timezone.js';
+import 'dayjs/plugin/utc.js';
+import './useUserPermissions-IrViIWLA.mjs';
+import './userDetails-Dbr9T6uw.mjs';
+import '@tanstack/react-store';
+import 'lucide-react';
+import './pending-icon-C39HKFOC.mjs';
+import './approved-Icon-D4Mj_64A.mjs';
+import './current-icon-PhyH9fHB.mjs';
+
+const SplitComponent = ManageComponent;
+
+export { SplitComponent as component };
+//# sourceMappingURL=index-ZBIr-r8-.mjs.map

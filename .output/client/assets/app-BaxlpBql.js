@@ -1,1 +1,0 @@
-const c=e=>{const r=e.match(/nyaya-tech-b2b\/[^?]+/);return r?r[0]:e},o=(e,r,t)=>e?.length?e.map((n,s)=>({...n,serial:(r-1)*t+(s+1)})):[],l=e=>e?e.replace(/\b\w/g,r=>r.toUpperCase()):"",i=(e,r)=>{const t=[];for(let a=r;a>=e;a--)t.push(a);return t},p=(e,r)=>new Date(e,r+1,0).getDate();export{o as a,p as b,l as c,c as e,i as g};

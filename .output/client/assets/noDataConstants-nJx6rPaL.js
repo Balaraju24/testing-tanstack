@@ -1,1 +1,0 @@
-const a={"legal opinions":"/create-legal-opinion",litigations:"/create-litigation",advocates:"/create-advocate",organizations:"/create-organization"},o=a,e=["/dashboard","/legal-advisors/","/dash-board","/user-review"];export{o as R,e as r};
