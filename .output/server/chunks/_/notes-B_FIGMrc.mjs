@@ -1,0 +1,42 @@
+import { S as ServiceNotes } from './ServiceNotes-CIm2hWGi.mjs';
+import 'react/jsx-runtime';
+import './Provider-DRuE0d-A.mjs';
+import './litigations-2Q1m8RsY.mjs';
+import './fetch-Cpm1bFFM.mjs';
+import 'js-cookie';
+import './manage-tW0NLyej.mjs';
+import '@tanstack/react-query';
+import '@tanstack/react-router';
+import 'react';
+import './Loading-DQypZbMn.mjs';
+import './router-e7zdrxGz.mjs';
+import '@tanstack/react-router-ssr-query';
+import '@radix-ui/react-slot';
+import 'class-variance-authority';
+import 'clsx';
+import 'tailwind-merge';
+import 'sonner';
+import 'framer-motion';
+import 'react-error-boundary';
+import './default-user-EV710LEP.mjs';
+import './notes-delete-icon-CyozBLV8.mjs';
+import './notes-edit-icon-B2gT4vHe.mjs';
+import './plus-icon-DkC55LLp.mjs';
+import './avatar-xL-W5RbG.mjs';
+import '@radix-ui/react-avatar';
+import './input-CcfBn-WR.mjs';
+import './table-U9GtizYM.mjs';
+import './textarea-BfKn0GZN.mjs';
+import './service-1g9dZr4o.mjs';
+import './userDetails-Dbr9T6uw.mjs';
+import '@tanstack/react-store';
+import './useUserPermissions-IrViIWLA.mjs';
+import 'dayjs';
+import './TabValuesForViewCase-nIQOXDrY.mjs';
+import './tabs-DdHLlHy_.mjs';
+import '@radix-ui/react-tabs';
+
+const SplitComponent = ServiceNotes;
+
+export { SplitComponent as component };
+//# sourceMappingURL=notes-B_FIGMrc.mjs.map
